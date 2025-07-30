@@ -12,6 +12,7 @@ The application analyzes input text and, depending on the selected mode, counts 
 
 ### Core Technologies
 - **Java**: 21
+- **Spring Boot**: 3.5.3
 - **Angular**: 19.1.0
 - **Node.js**: 22.14.0
 - **npm**: 10.2.5
