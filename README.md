@@ -25,3 +25,30 @@ The application analyzes input text and, depending on the selected mode, counts 
 
 ### Recommended IDE
 - **IntelliJ IDEA** — For full-stack development (Spring Boot + Angular support)
+
+##  How to Run the Application
+
+### Backend (Spring Boot)
+
+- Change directory: `cd textanalyzer/backend`
+- Build the project: `mvn clean install`
+- Run the backend application: `mvn spring-boot:run` or use your IDE
+
+### Frontend (Angular)
+
+- Change directory: `cd textanalyzer/frontend`
+- Install dependencies: `npm install`
+- Generate the TypeScript API client: `npm run generate:api`
+- Run unit tests: `npm test`
+- Start the development server: `npm run start`
+
+
+### Local URLs
+
+- The backend will be available at: `http://localhost:8080`
+- The frontend will be available at: `http://localhost:4200`
+
+
+
+
+
