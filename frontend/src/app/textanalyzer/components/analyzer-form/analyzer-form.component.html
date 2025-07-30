@@ -1,0 +1,70 @@
+<p-toast [showTransitionOptions]="'250ms'"
+         [showTransformOptions]="'translateX(100%)'"
+         [hideTransitionOptions]="'150ms'"
+         position="center"
+         [hideTransformOptions]="'translateX(100%)'">
+
+</p-toast>
+
+
+<p-panel header="Text Analyzer Demo" [toggleable]="false" styleClass="centered-header">
+  <br />
+  <p-floatlabel variant="on">
+    <div class="p-field p-col-12 p-md-6 p-lg-4">
+      <label for="inputTxt">Text for analyze</label>
+      <input
+        id="inputTxt"
+        type="text"
+        pInputText
+        style="width: 100%;"
+        [(ngModel)]="textForAnalyze"
+      />
+    </div>
+  </p-floatlabel>
+</p-panel>
+<br>
+<div class="p-field p-col-12 p-md-6 p-lg-4 p-mt-3">
+  <div class="d-flex">
+    <p-selectbutton
+      [(ngModel)]="type"
+      [options]="options"
+      [ngStyle]="{ 'margin-right': '3rem' }">
+    </p-selectbutton>
+    <p-button
+      label="Analyze"
+      icon="pi pi-search"
+      severity="info"
+      [ngStyle]="{'margin-right': '2rem'}"
+      (onClick)="analyzer()">
+    </p-button>
+    <p-checkbox
+      [(ngModel)]="checked"
+      [binary]="true"
+      variant="filled"
+      [ngStyle]="{'margin-right': '2rem'}"
+      [indeterminate]="false">
+    </p-checkbox>
+    <label class="ml-2">
+      {{ checked ? 'Offline' : 'Online' }}
+    </label>
+
+  </div>
+</div>
+<br>
+<p-panel header="Results" [toggleable]="true" *ngIf="results.length">
+  <div *ngFor="let res of results; let i = index" class="p-mb-3">
+    <div class="p-text-bold p-mb-1">
+      <span>#{{ i + 1 }} – "{{ res.text }}" ({{ res.type }})</span>
+    </div>
+    <div class="p-ml-2 p-flex p-flex-wrap">
+      <span
+        *ngFor="let item of res.result | keyvalue"
+        style="margin-right: 1rem;"
+      >
+        <strong>{{ item.key }}:</strong> {{ item.value }},
+      </span>
+    </div>
+    <hr />
+  </div>
+</p-panel>
+

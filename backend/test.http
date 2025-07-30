@@ -1,0 +1,31 @@
+###
+POST http://localhost:8080/analyze
+Content-Type: application/json
+Accept: application/json
+
+{
+  "type": "vowels",
+  "input": "HelloWorld"
+}
+
+
+###
+POST http://localhost:8080/analyze
+Content-Type: application/json
+Accept: application/json
+
+{
+  "type": "consonants",
+  "input": "Hello World"
+}
+
+
+###
+POST http://localhost:8080/analyze
+Content-Type: application/json
+Accept: application/json
+
+{
+  "type": "nonaeiou",
+  "input": "Hello World"
+}

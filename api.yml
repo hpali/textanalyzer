@@ -1,0 +1,71 @@
+openapi: 3.0.3
+info:
+  title: Text Analyzer API
+  version: 1.0.0
+  description: A RESTful API for Text Analyzer.
+servers:
+  - url: "{protocol}://{host}:{port}"
+    description: Configurable Server
+    variables:
+      protocol:
+        default: http
+        enum:
+          - http
+          - https
+      host:
+        default: localhost
+      port:
+        default: "8080"
+        enum:
+          - "8080"
+          - "3000"
+paths:
+  /analyze:
+    post:
+      tags:
+        - TextAnalyzer
+      summary: Analyze text for character categories
+      description: Analyzes the input text and returns letter frequencies
+      operationId: analyzeText
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AnalyzeTextRequest'
+      responses:
+        '200':
+          description: Successfully analyzed text
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnalyzeTextResponse'
+        '400':
+          description: Invalid input
+
+components:
+  schemas:
+
+    AnalyzeTextRequest:
+      type: object
+      required:
+        - type
+        - input
+      properties:
+        type:
+          type: string
+          description: Type of analysis (e.g. "vowels" or "consonants" or "nonAeiou")
+          example: vowels
+        input:
+          type: string
+          description: The text to analyze
+          example: "This is a sample text."
+
+    AnalyzeTextResponse:
+      type: object
+      additionalProperties:
+        type: integer
+      example:
+        A: 2
+        E: 1
+        O: 3
