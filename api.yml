@@ -54,7 +54,7 @@ components:
       properties:
         type:
           type: string
-          description: Type of analysis (e.g. "vowels" or "consonants" or "nonAeiou")
+          description: Type of analysis (e.g. "vowels" or "consonants" or "nonaeiou")
           example: vowels
         input:
           type: string

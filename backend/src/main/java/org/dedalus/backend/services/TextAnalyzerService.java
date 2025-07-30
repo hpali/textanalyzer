@@ -104,7 +104,7 @@ public class TextAnalyzerService {
         Function<String, Map<String, Integer>> analyzer = analyzers.get(type.toLowerCase());
 
         if (analyzer == null) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Unknown analysis type: " + type);
+            throw new IllegalArgumentException("Unknown analysis type: " + type);
         }
 
         return analyzer.apply(input);
