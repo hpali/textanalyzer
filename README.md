@@ -39,7 +39,6 @@ The application analyzes input text and, depending on the selected mode, counts 
 - Change directory: `cd textanalyzer/frontend`
 - Install dependencies: `npm install`
 - Generate the TypeScript API client: `npm run generate:api`
-- Run unit tests: `npm test`
 - Start the development server: `npm run start`
 
 
@@ -48,6 +47,44 @@ The application analyzes input text and, depending on the selected mode, counts 
 - The backend will be available at: `http://localhost:8080`
 - The frontend will be available at: `http://localhost:4200`
 
+##  Testing
+
+###  Backend Tests (Spring Boot)
+
+Run tests using Maven:
+
+- Change directory: `cd textanalyzer/backend`
+- Run unit tests: `mvn  test`
+- 
+  ** IntelliJ IDEA Tip:**  
+  Right-click on the `backend` directory and select **Run 'All Tests'**  
+  to automatically execute all unit tests in the project.
+
+
+### Manual API Test (Optional)
+
+You can test the `/analyze` REST endpoint manually using an IDE like IntelliJ:
+
+Example request in `test.http`:
+
+
+### Example HTTP Request
+```
+POST http://localhost:8080/analyze 
+Content-Type: application/json 
+
+Accept: application/json 
+  {
+   "type": "vowels", 
+   "input": "HelloWorld" 
+  } 
+```  
+
+
+###  Frontend Tests (Angular)
+
+- Change directory: `cd textanalyzer/frontend`
+- Run  tests: `npm  test`
 
 
 
