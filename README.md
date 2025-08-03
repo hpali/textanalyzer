@@ -55,8 +55,7 @@ Run tests using Maven:
 
 - Change directory: `cd textanalyzer/backend`
 - Run unit tests: `mvn  test`
-- 
-  ** IntelliJ IDEA Tip:**  
+- _**IntelliJ IDEA Tip:**_  
   Right-click on the `backend` directory and select **Run 'All Tests'**  
   to automatically execute all unit tests in the project.
 
