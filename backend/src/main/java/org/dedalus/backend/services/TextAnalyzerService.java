@@ -1,9 +1,7 @@
 package org.dedalus.backend.services;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -97,6 +95,8 @@ public class TextAnalyzerService {
 
         return consonants;
     }
+
+
 
     public Map<String, Integer> analyze(String type, String input) {
         log.info("Starting analysis for type: {}", type);
